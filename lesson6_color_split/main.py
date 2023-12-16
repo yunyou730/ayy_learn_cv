@@ -6,10 +6,23 @@ def test_color_split():
     img = cv2.imread("./_raw_img/badge.jpeg",cv2.IMREAD_COLOR)
     (b,g,r) = cv2.split(img)
 
+
+    height = img.shape[0]
+    width = img.shape[1]
+    img2 = np.zeros((height,width,3),np.uint8);   # create 512x512, 3 channels, uint8 , tuple 
+
+
     cv2.imshow("channel_b",b)
     cv2.imshow("channel_g",g)
     cv2.imshow("channel_r",r)
-    
+
+
+    cv2.merge((b,g,r),img);
+    cv2.merge((r,g,b),img2);
+
+    cv2.imshow("merged",img);
+    cv2.imshow("merged_wrong",img2);    
+
     while True:
         if cv2.waitKey(0) == ord('q'):
             break;
