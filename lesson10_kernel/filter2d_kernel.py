@@ -3,6 +3,7 @@ import numpy as np
 
 
 img = cv2.imread("./_raw_img/grainy_noise.jpg");
+# img = cv2.imread("./_raw_img/woman.jpeg");
 
 height = img.shape[0]
 width = img.shape[1]
